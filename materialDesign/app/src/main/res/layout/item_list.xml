@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:padding="5dp"
+    android:background="#FFFFFF"
+    >
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:id="@+id/imgCategory"
+        android:src="@drawable/logo_guia_de_braganca_"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/txtDescriptionCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="null"
+            android:textStyle="normal"
+            android:textSize="18dp"
+            android:layout_toRightOf="@+id/imgCategory"
+            android:gravity="center_vertical"
+            android:textColor="#000000"
+            />
+
+</RelativeLayout>
