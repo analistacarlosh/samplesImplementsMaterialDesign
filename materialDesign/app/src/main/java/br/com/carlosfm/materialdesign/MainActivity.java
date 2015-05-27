@@ -3,6 +3,7 @@ package br.com.carlosfm.materialdesign;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -51,6 +52,26 @@ public class MainActivity extends ActionBarActivity
         }
 
         new CategoryTask().execute();
+
+        /*
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener(){
+            @Override
+            public boolean onMenuItemClick(){
+                // Tratar opçÕes de menu aqui
+                return true;
+            }
+        });
+
+        toolbar.setTitle(R.string.app_name);
+        toolbar.setElevation(20);
+        toolbar.inflateMenu(R.menu.menu_main);
+        */
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -67,12 +88,21 @@ public class MainActivity extends ActionBarActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        Toast.makeText(MainActivity.this, "action:" + item, Toast.LENGTH_LONG);
 
-        return super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.action_home:
+                Log.i("MENU", "onOptionsItemSelected - action_home");
+                return true;
+            case R.id.action_infos:
+                Log.i("MENU", "onOptionsItemSelected - action_infos");
+                return true;
+            case R.id.action_delivery:
+                Log.i("MENU", "onOptionsItemSelected - action_delivery");
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

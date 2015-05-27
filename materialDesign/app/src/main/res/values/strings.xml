@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">appguia</string>
+    <string name="app_name">Guia de Bragança</string>
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="action_home"> Buscas</string>
+    <string name="action_delivery"> Delivery</string>
+    <string name="action_infos"> Úteis</string>
+
 </resources>
